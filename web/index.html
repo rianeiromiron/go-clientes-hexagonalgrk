@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Clientes - Hexagonal Go</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CRUD de Clientes</h1>
+      <p class="subtitle">Arquitectura Hexagonal · Go + PostgreSQL</p>
+    </header>
+
+    <section class="card form-card">
+      <h2 id="form-title">Nuevo Cliente</h2>
+      <form id="client-form">
+        <input type="hidden" id="client-id" />
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" required placeholder="Ej: Juan Pérez" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required placeholder="Ej: juan@ejemplo.com" />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" placeholder="Ej: +54 11 1234-5678" />
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" placeholder="Ej: Av. Corrientes 1234" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" id="btn-submit" class="btn btn-primary">Crear</button>
+          <button type="button" id="btn-cancel" class="btn btn-secondary hidden">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Listado de Clientes</h2>
+        <button id="btn-refresh" class="btn btn-outline">Actualizar</button>
+      </div>
+      <div id="loading" class="loading hidden">Cargando...</div>
+      <div id="error" class="error hidden"></div>
+      <div id="empty" class="empty hidden">No hay clientes registrados.</div>
+      <div class="table-wrapper">
+        <table id="clients-table" class="hidden">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="clients-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

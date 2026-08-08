@@ -1,0 +1,50 @@
+# Binarios de Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+bin/
+dist/
+
+# Dependencias (opcional, muchos equipos sí versionan go.sum)
+# vendor/
+
+# Archivos de entorno (¡importante!)
+.env
+.env.local
+.env.*.local
+
+# IDE / Editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs y temporales
+*.log
+tmp/
+temp/
+*.tmp
+
+# Cobertura de tests
+coverage.out
+coverage.html
+*.coverprofile
+
+# Docker (volúmenes locales si los hubiera)
+# No ignores docker-compose.yml
+
+# Sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
